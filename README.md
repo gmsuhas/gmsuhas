@@ -12,8 +12,7 @@ and a missing number fails the rule that needs it.
 
 The same decision is a command, `veto check`, and a one-tool MCP server,
 `veto serve`, so a host that already runs other servers can call it. It does
-not fetch prices and it does not recommend a trade. A pull request to add it
-to the public list of MCP servers is open.
+not fetch prices and it does not recommend a trade.
 
 ## [otl](https://github.com/gmsuhas/otl)
 
@@ -35,6 +34,6 @@ Three text tools, under the same constraint:
 
 ## Everything else
 
-Eleven of the other public repositories are forks, kept even with upstream
+The other public repositories are forks, kept even with upstream
 and not presented as my work. `spawnpackage` is an empty repository from
 2015.
