@@ -1,38 +1,40 @@
 # Suhas Manjunath
 
-Two small Python tools, each one file you can read through. No dependencies
-beyond Python 3.9.
+I write small Python tools and keep them dependency-free, so the interesting
+part is the behavior rather than the setup. Each one is explicit about what
+it will not do.
+
+## [veto](https://github.com/gmsuhas/veto)
+
+A checklist for a long call. Given the figures, it returns `pass`, `fail`, or
+`watchlist`. Both entry modes failing is a watchlist, not a smaller trade,
+and a missing number fails the rule that needs it.
+
+The same decision is a command, `veto check`, and a one-tool MCP server,
+`veto serve`, so a host that already runs other servers can call it. It does
+not fetch prices and it does not recommend a trade. A pull request to add it
+to the public list of MCP servers is open.
 
 ## [otl](https://github.com/gmsuhas/otl)
 
 A plain-text event log turned into one OpenTelemetry trace.
 
-A start and a stop become a span. A span opened inside another becomes its
-child. A failure becomes an error status, and a start that never stops stays
-in the trace as unclosed instead of being given a made-up duration. The same
-tree is written as OTLP JSON: hex trace and span ids, integer span kind and
-status, timestamps as decimal strings of nanoseconds.
-
-That is the part that breaks in production before anyone picks a backend. An
-unclosed span is held until the process notices. A trace reconstructed from
-logs is what an incident becomes when the spans were never exported. A
-collector rejects a trace id that was base64-encoded, or a span kind written
-as a name. otl is those three failures, small enough to read.
-
-It sits in front of projects that already do the rest.
-[beam-telemetry/telemetry](https://github.com/beam-telemetry/telemetry)
-dispatches events and is not OpenTelemetry.
-[posit-dev/picotel](https://github.com/posit-dev/picotel) sends spans, and
-[dimaqq/otlp-json](https://github.com/dimaqq/otlp-json) serialises spans the
-official SDK already built. otl starts from the line of text.
+A start and a stop become a span, and a span opened inside another becomes
+its child. A failure is an error status. A start that never stops stays
+unclosed, rather than being given a made-up duration. `otl otlp` writes the
+trace as OTLP JSON, and a date turns the time of day into unix time so a
+collector can place it.
 
 ## [playyard](https://github.com/gmsuhas/playyard)
 
-Three text tools, same constraint:
+Three text tools, under the same constraint:
 
-- a small interpreter, cut down to print, assign, arithmetic, and one loop
+- a small interpreter: print, assign, arithmetic, and one loop
 - a day log that adds up where the time went, matching whole words
 - one HTML file, styling included, with nothing to fetch
 
-Ten of the other public repos are forks, kept even with upstream.
-`spawnpackage` is an empty repository from 2015, not a fork and not a project.
+## Everything else
+
+Eleven of the other public repositories are forks, kept even with upstream
+and not presented as my work. `spawnpackage` is an empty repository from
+2015.
