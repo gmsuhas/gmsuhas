@@ -34,4 +34,5 @@ Three text tools, same constraint:
 - a day log that adds up where the time went, matching whole words
 - one HTML file, styling included, with nothing to fetch
 
-The other public repos on this account are forks, kept even with upstream.
+Ten of the other public repos are forks, kept even with upstream.
+`spawnpackage` is an empty repository from 2015, not a fork and not a project.
