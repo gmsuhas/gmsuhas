@@ -3,33 +3,11 @@
 Senior manager of software development at Amazon, in Seattle. I lead teams
 that build AI, data, and observability platforms.
 
-**TLDR.** Four small Python tools, nothing to install. Each one is a
-decision that used to live in someone's head, written down so a second
-person gets the same answer. The table below is the whole catalog. Open a
-repo only if its row is your problem.
-
-## The story
-
-I kept meeting the same failure in different clothes.
-
-A checkout breaks and the trace stops short of the operation that broke, so
-the team argues about vendors instead of about the request. A change rolls
-out to some customers and not others, and when errors rise nobody can say
-whether the new version caused them, so the whole launch gets undone. A
-review I ran twice in one week gave two different answers, because a number
-that was "near" the line counted as a pass the second time. A day disappears
-because it was never written down in a form anyone could add up.
-
-In every case the information was already there. What was missing was one
-agreed way to read it. I write that way down, small, before I ask anyone to
-staff the real version. A thing you can re-run beats a thing you have to
-trust.
-
-The four tools are those readings. They share a constraint and nothing else:
-Python, no dependencies, and an explicit list of what they will not do.
-I am on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
-
-## The four
+**TLDR.** The four repos pinned above are the small version of problems I
+keep meeting at work. A trace that stops short of the failure. A rollout
+nobody can pin on the new version. A review that changes its answer the
+second time. A day nobody wrote down. Each is Python, nothing to install,
+and each one says what it will not do.
 
 | | Read it if | What you get |
 |---|---|---|
@@ -38,8 +16,8 @@ I am on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
 | [veto](https://github.com/gmsuhas/veto) | a review gives a different answer the second time | `pass`, `fail`, or `watchlist`, and a missing number fails |
 | [playyard](https://github.com/gmsuhas/playyard) | a day disappears because nobody wrote it down | a day added up by where the time went |
 
-## Everything else
+The other public repositories are forks. Each description names the
+upstream it tracks. They are not my work. `spawnpackage` is an empty
+repository from 2015.
 
-The other public repositories are forks. Each description says so, and
-names the upstream it tracks. They are not my work. `spawnpackage` is an
-empty repository from 2015.
+I am on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
