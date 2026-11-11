@@ -67,5 +67,6 @@ one HTML page with nothing to fetch.
 
 ## Everything else
 
-The other public repositories are forks, kept even with upstream and not
-presented as my work. `spawnpackage` is an empty repository from 2015.
+The other public repositories are forks. Each description says so, and
+names the upstream it tracks. They are not my work. `spawnpackage` is an
+empty repository from 2015.
