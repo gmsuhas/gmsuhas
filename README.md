@@ -27,8 +27,7 @@ trust.
 
 The four tools are those readings. They share a constraint and nothing else:
 Python, no dependencies, and an explicit list of what they will not do.
-
-Longer writing is on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
+I am on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
 
 ## The four
 
@@ -37,7 +36,7 @@ Longer writing is on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
 | [otl](https://github.com/gmsuhas/otl) | a trace stops short of the thing that broke | one trace from a text log, and a span left open stays open |
 | [ramp](https://github.com/gmsuhas/ramp) | you cannot tell whether the new version is the one failing | the version written on the request, and a count the same day |
 | [veto](https://github.com/gmsuhas/veto) | a review gives a different answer the second time | `pass`, `fail`, or `watchlist`, and a missing number fails |
-| [playyard](https://github.com/gmsuhas/playyard) | you want the small version of an idea you never finished | a few lines of a language, a day added up, one HTML file |
+| [playyard](https://github.com/gmsuhas/playyard) | a day disappears because nobody wrote it down | a day added up by where the time went |
 
 ## Everything else
 
