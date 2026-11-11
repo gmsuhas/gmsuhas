@@ -5,8 +5,8 @@ that build AI, data, and observability platforms.
 
 **TLDR.** Four small Python tools, nothing to install. Each one is a
 decision that used to live in someone's head, written down so a second
-person gets the same answer. Read the line under a name. Open the repo
-only if that line is your problem.
+person gets the same answer. The table below is the whole catalog. Open a
+repo only if its row is your problem.
 
 ## The story
 
@@ -30,40 +30,14 @@ Python, no dependencies, and an explicit list of what they will not do.
 
 Longer writing is on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
 
-## [otl](https://github.com/gmsuhas/otl)
+## The four
 
-**TLDR.** A text log becomes one trace, so you can see the request that
-broke instead of buying a tracing backend to find out.
-
-A start and a stop become a span. A span opened inside another becomes its
-child. A start that never stops stays open, because a made-up end time is
-how the failure disappears.
-
-## [ramp](https://github.com/gmsuhas/ramp)
-
-**TLDR.** The version a customer got is written on the request, so when
-something fails you know the same day whether the new version is the one
-failing.
-
-Each customer keeps a number from 0 to 99. A rollout of 10% sends the
-numbers under 10 to the new version. A failure counts against the version
-they actually got. It does not choose the percentage, and it does not
-declare a winner.
-
-## [veto](https://github.com/gmsuhas/veto)
-
-**TLDR.** A review answers `pass`, `fail`, or `watchlist` from the figures
-you give it, so Thursday's answer matches Monday's.
-
-A missing number fails the rule that needs it. "Near enough" is not a pass.
-It does not fetch a price and it does not recommend a trade. The same check
-is a command and a one-tool MCP server.
-
-## [playyard](https://github.com/gmsuhas/playyard)
-
-**TLDR.** Three things I kept meaning to have, each small enough to finish:
-a few lines of a toy language, a day added up by where the time went, and
-one HTML page with nothing to fetch.
+| | Read it if | What you get |
+|---|---|---|
+| [otl](https://github.com/gmsuhas/otl) | a trace stops short of the thing that broke | one trace from a text log, and a span left open stays open |
+| [ramp](https://github.com/gmsuhas/ramp) | you cannot tell whether the new version is the one failing | the version written on the request, and a count the same day |
+| [veto](https://github.com/gmsuhas/veto) | a review gives a different answer the second time | `pass`, `fail`, or `watchlist`, and a missing number fails |
+| [playyard](https://github.com/gmsuhas/playyard) | you want the small version of an idea you never finished | a few lines of a language, a day added up, one HTML file |
 
 ## Everything else
 
