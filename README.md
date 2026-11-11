@@ -4,16 +4,6 @@ I write small Python tools and keep them dependency-free, so the interesting
 part is the behavior rather than the setup. Each one is explicit about what
 it will not do.
 
-## [veto](https://github.com/gmsuhas/veto)
-
-A checklist for a long call. Given the figures, it returns `pass`, `fail`, or
-`watchlist`. Both entry modes failing is a watchlist, not a smaller trade,
-and a missing number fails the rule that needs it.
-
-The same decision is a command, `veto check`, and a one-tool MCP server,
-`veto serve`, so a host that already runs other servers can call it. It does
-not fetch prices and it does not recommend a trade.
-
 ## [otl](https://github.com/gmsuhas/otl)
 
 A plain-text event log turned into one OpenTelemetry trace.
@@ -23,6 +13,27 @@ its child. A failure is an error status. A start that never stops stays
 unclosed, rather than being given a made-up duration. `otl otlp` writes the
 trace as OTLP JSON, and a date turns the time of day into unix time so a
 collector can place it.
+
+## [ramp](https://github.com/gmsuhas/ramp)
+
+Decides which variant a request gets, and writes that decision as one
+`feature_flag` event on the span that was open around it.
+
+The bucket is a number from 0 to 99, stable for a flag and an identity. A
+ramp of 10 sends the numbers under 10 to the treatment. The event uses the
+names the OpenTelemetry feature-flag registry already records, so the same
+line can be read back as a trace and counted: how many of each variant
+failed. It does not serve the flag, and it does not say the treatment won.
+
+## [veto](https://github.com/gmsuhas/veto)
+
+A checklist for a long call. Given the figures, it returns `pass`, `fail`, or
+`watchlist`. Both entry modes failing is a watchlist, not a smaller trade,
+and a missing number fails the rule that needs it.
+
+The same decision is a command, `veto check`, and a one-tool MCP server,
+`veto serve`, so a host that already runs other servers can call it. It does
+not fetch prices and it does not recommend a trade.
 
 ## [playyard](https://github.com/gmsuhas/playyard)
 
@@ -34,6 +45,5 @@ Three text tools, under the same constraint:
 
 ## Everything else
 
-The other public repositories are forks, kept even with upstream
-and not presented as my work. `spawnpackage` is an empty repository from
-2015.
+The other public repositories are forks, kept even with upstream and not
+presented as my work. `spawnpackage` is an empty repository from 2015.
