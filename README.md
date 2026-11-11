@@ -1,54 +1,69 @@
 # Suhas Manjunath
 
 Senior manager of software development at Amazon, in Seattle. I lead teams
-that build AI, data, and observability platforms, and I still write the
-small version of a problem myself before I ask anyone to staff it.
+that build AI, data, and observability platforms.
 
-The tools below are that version. Each one is Python, dependency-free, and
-explicit about what it will not do. The interesting part is the behavior,
-not the setup: a decision you can re-run, a trace you can read, a count
-that names the variant which failed.
+**TLDR.** Four small Python tools, nothing to install. Each one is a
+decision that used to live in someone's head, written down so a second
+person gets the same answer. Read the line under a name. Open the repo
+only if that line is your problem.
+
+## The story
+
+I kept meeting the same failure in different clothes.
+
+A checkout breaks and the trace stops short of the operation that broke, so
+the team argues about vendors instead of about the request. A change rolls
+out to some customers and not others, and when errors rise nobody can say
+whether the new version caused them, so the whole launch gets undone. A
+review I ran twice in one week gave two different answers, because a number
+that was "near" the line counted as a pass the second time. A day disappears
+because it was never written down in a form anyone could add up.
+
+In every case the information was already there. What was missing was one
+agreed way to read it. I write that way down, small, before I ask anyone to
+staff the real version. A thing you can re-run beats a thing you have to
+trust.
+
+The four tools are those readings. They share a constraint and nothing else:
+Python, no dependencies, and an explicit list of what they will not do.
 
 Longer writing is on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
 
 ## [otl](https://github.com/gmsuhas/otl)
 
-A plain-text event log turned into one OpenTelemetry trace.
+**TLDR.** A text log becomes one trace, so you can see the request that
+broke instead of buying a tracing backend to find out.
 
-A start and a stop become a span, and a span opened inside another becomes
-its child. A failure is an error status. A start that never stops stays
-unclosed, rather than being given a made-up duration. `otl otlp` writes the
-trace as OTLP JSON, and a date turns the time of day into unix time so a
-collector can place it.
+A start and a stop become a span. A span opened inside another becomes its
+child. A start that never stops stays open, because a made-up end time is
+how the failure disappears.
 
 ## [ramp](https://github.com/gmsuhas/ramp)
 
-Decides which variant a request gets, and writes that decision as one
-`feature_flag` event on the span that was open around it.
+**TLDR.** The version a customer got is written on the request, so when
+something fails you know the same day whether the new version is the one
+failing.
 
-The bucket is a number from 0 to 99, stable for a flag and an identity. A
-ramp of 10 sends the numbers under 10 to the treatment. The event uses the
-names the OpenTelemetry feature-flag registry already records, so the same
-line can be read back as a trace and counted: how many of each variant
-failed. It does not serve the flag, and it does not say the treatment won.
+Each customer keeps a number from 0 to 99. A rollout of 10% sends the
+numbers under 10 to the new version. A failure counts against the version
+they actually got. It does not choose the percentage, and it does not
+declare a winner.
 
 ## [veto](https://github.com/gmsuhas/veto)
 
-A checklist for a long call. Given the figures, it returns `pass`, `fail`, or
-`watchlist`. Both entry modes failing is a watchlist, not a smaller trade,
-and a missing number fails the rule that needs it.
+**TLDR.** A review answers `pass`, `fail`, or `watchlist` from the figures
+you give it, so Thursday's answer matches Monday's.
 
-The same decision is a command, `veto check`, and a one-tool MCP server,
-`veto serve`, so a host that already runs other servers can call it. It does
-not fetch prices and it does not recommend a trade.
+A missing number fails the rule that needs it. "Near enough" is not a pass.
+It does not fetch a price and it does not recommend a trade. The same check
+is a command and a one-tool MCP server.
 
 ## [playyard](https://github.com/gmsuhas/playyard)
 
-Three text tools, under the same constraint:
-
-- a small interpreter: print, assign, arithmetic, and one loop
-- a day log that adds up where the time went, matching whole words
-- one HTML file, styling included, with nothing to fetch
+**TLDR.** Three things I kept meaning to have, each small enough to finish:
+a few lines of a toy language, a day added up by where the time went, and
+one HTML page with nothing to fetch.
 
 ## Everything else
 
