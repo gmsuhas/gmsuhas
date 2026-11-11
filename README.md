@@ -16,8 +16,5 @@ and each one says what it will not do.
 | [veto](https://github.com/gmsuhas/veto) | a review gives a different answer the second time | `pass`, `fail`, or `watchlist`, and a missing number fails |
 | [playyard](https://github.com/gmsuhas/playyard) | a day disappears because nobody wrote it down | a day added up by where the time went |
 
-The other public repositories are forks. Each description names the
-upstream it tracks. They are not my work. `spawnpackage` is an empty
-repository from 2015.
 
 I am on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
