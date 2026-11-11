@@ -1,8 +1,15 @@
 # Suhas Manjunath
 
-I write small Python tools and keep them dependency-free, so the interesting
-part is the behavior rather than the setup. Each one is explicit about what
-it will not do.
+Senior manager of software development at Amazon, in Seattle. I lead teams
+that build AI, data, and observability platforms, and I still write the
+small version of a problem myself before I ask anyone to staff it.
+
+The tools below are that version. Each one is Python, dependency-free, and
+explicit about what it will not do. The interesting part is the behavior,
+not the setup: a decision you can re-run, a trace you can read, a count
+that names the variant which failed.
+
+Longer writing is on [LinkedIn](https://www.linkedin.com/in/gmsuhas).
 
 ## [otl](https://github.com/gmsuhas/otl)
 
